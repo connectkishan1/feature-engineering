@@ -15,14 +15,14 @@ Instead, **Use SMOTE algorithm from 6 effective ways to handle imbalanced classe
 - we recommend Area Under ROC Curve (AUROC). You can read more about it [Here](https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it)
 #### 4. Penalize Algorithms (Cost-Sensitive Training)
 - its increase the cost of classification mistakes on the minority class.A popular algorithm for this technique is Penalized-SVM
-- model = SVC(kernel='linear', class_weight='**balanced**',probability=True) # penalize
-            probability=True)
+- model = SVC(kernel='linear', class_weight='**balanced**',probability=True) # penalize-balanced
 #### 5. Use Tree-Based Algorithms
 - Decision trees often perform well on imbalanced datasets because their hierarchical structure allows them to learn signals from both classes.
 #### 6. SMOTE Method
 - SMOTE (synthetic minority oversampling technique) is one of the most commonly used oversampling methods to solve the imbalance problem.used to increase the samples in a minority class.
 - It generates new samples by looking at the feature space of the target and detecting nearest neighbors. Then, it simply selects similar samples and changes a column at a time randomly within the feature space of the neighboring samples.
 - The module to implement SMOTE can be found within the imbalanced-learn package. You can simply import the package and apply a fit_transform:
+
 
 <img align="center" alt="Coding" width="400" src="https://github.com/connectkishan1/feature-engineering/blob/master/distribution.png"><img align="center" alt="Coding" width="400" src="https://github.com/connectkishan1/feature-engineering/blob/master/resampled.png">
 
@@ -41,3 +41,4 @@ Instead, **Use SMOTE algorithm from 6 effective ways to handle imbalanced classe
 - Instead, you can use SMOTENC which takes into account the nature of categorical variables. This version is also available in the imbalanced-learnpackage.
 
 - Additional tip 2: Make sure to oversample after creating the train/test split so that you only oversample the train data. You typically do not want to test your model on synthetic data.
+
